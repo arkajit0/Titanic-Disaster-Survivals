@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.bg-image {
+  /* The image used */
+  background-image: url("/static/images/titanic1.jpg");
+
+  /* Add the blur effect */
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Position text in the middle of the page/image */
+.bg-text {
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+  color: white;
+  font-weight: bold;
+  border: 3px solid #f1f1f1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 80%;
+  padding: 20px;
+  text-align: center;
+}
+</style>
+<body>
+<div class="bg-image"></div>
+
+<div class="bg-text">
+ <div class="content">
+    <div style="text-align: center">Predict The Person has Survived</div>
+     <br><br>
+    <div class="form">
+        <form action="/predict" method="post">
+        <label for="age">Person Age</label>
+        <input style="text-align: center" type="number" name="age" id="age" placeholder="Enter Age" max="80">
+        <br><br>
+        <label for="gender">Gender</label>
+        <select name="gender_class" id="gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
+        <br><br>
+        <label for="coach">Travel Class</label>
+        <select name="coach_number" id="coach">
+            <option value="first class">First Class</option>
+            <option value="second class">Second Class</option>
+            <option value="third class">Economy Class</option>
+        </select>
+        <br><br>
+        <label for="fare">Fare</label>
+        <input type="number" name="fare" id="fare" placeholder="Enter Fare">
+        <br><br>
+        <label for="passenger">Total Members in a Family</label>
+        <input type="number" name="passengers" id="passenger" min="1" placeholder="Enter total Family Members">
+        <br><br>
+        <input value="Predict" type="submit">
+        </form>
+    </div>
+</div>
+</div>
+
+
+</body>
+</html>
